@@ -1,12 +1,15 @@
 var path = require('path');
 var webpack = require('webpack');
-const { VueSSRServerPlugin } = require('vue-ssr-webpack-plugin')
+const { VueSSRServerPlugin } = require('vue-ssr-webpack-plugin');
 
 module.exports = {
-  entry: './src/main.js',
+  entry: {
+    app: ['./src/main.server.js'],
+  },
+  externals: Object.keys(require('./package.json').dependencies),
   target: 'node',
   output: {
-    path: '/',
+    path: path.resolve(__dirname, './dist'),
     publicPath: '/dist/',
     filename: 'app.js',
     libraryTarget: 'commonjs2'
@@ -64,10 +67,13 @@ module.exports = {
     }
   },
   devServer: {
-    hot: true,
+    historyApiFallback: true,
+    noInfo: true
   },
-  devtool: '#cheap-module-eval-source-map',
-  plugins: [
-    new VueSSRServerPlugin()
-  ]
+  devtool: '#source-map',
 }
+
+module.exports.plugins = [
+
+  new VueSSRServerPlugin()
+]

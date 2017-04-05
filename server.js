@@ -5,6 +5,7 @@ var AWS = require('aws-sdk'),
     passwordless = require('passwordless'),
     bodyParser = require('body-parser'),
     favicon = require('serve-favicon'),
+    fs = require('fs'),
     session = require('express-session'),
     GoogleStrategy = require('passport-google-oauth20').Strategy;
 
@@ -200,8 +201,10 @@ router.get('/getToken', (req, res, next) => {
   }
 });
 
+/*
 router.get('/', (req, res, next) =>
   res.sendFile(__dirname + '/index.html'));
+*/
 
 if (env == 'development') {
   var webpackDevMiddleware = require('webpack-dev-middleware');
@@ -234,6 +237,24 @@ if (env == 'development') {
 app.use(router);
 app.use('/upload', fineUploaderMiddleware());
 
-app.listen(conf.PORT, () => {
+const { createBundleRenderer } = require('vue-server-renderer')
+const bundle = require('./dist/vue-ssr-bundle.json');
+const renderer = createBundleRenderer(
+  bundle,
+  {
+    template: fs.readFileSync('./index.html', 'utf-8')
+  }
+);
+
+global.Vue = require('vue')
+app.get('*', (req, res) => {
+  if (!renderer) {
+    return res.end('waiting for compilation... refresh in a moment.')
+  }
+
+  renderer.renderToStream({url: req.url}).pipe(res);
+})
+
+app.listen(8082, () => {
   console.log(`listening on ${conf.PORT} port`);
 })

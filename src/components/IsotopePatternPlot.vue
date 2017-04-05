@@ -79,7 +79,8 @@
    require.ensure(['plotly.js/lib/core', 'd3'], (require) => {
      const Plotly = require('plotly.js/lib/core');
      Plotly.newPlot(element, plotData, layout);
-     window.onresize = () => Plotly.Plots.resize(element);
+     if (window !== undefined)
+       window.onresize = () => Plotly.Plots.resize(element);
    });
  }
 

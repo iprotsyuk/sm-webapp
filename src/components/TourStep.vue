@@ -134,7 +134,7 @@
            timeout *= factor;
            if (timeout > maxTimeout)
              return;
-           window.setTimeout(showStep, timeout);
+           setTimeout(showStep, timeout);
            return;
          }
 
@@ -143,7 +143,7 @@
        }
 
        Vue.nextTick(() => {
-         window.setTimeout(showStep, timeout);
+         setTimeout(showStep, timeout);
        });
      },
 

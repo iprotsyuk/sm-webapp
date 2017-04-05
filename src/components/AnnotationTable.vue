@@ -188,7 +188,7 @@
      }
    },
    mounted() {
-     var nCells = (window.innerHeight - 150) / 43;
+     var nCells = window ? (window.innerHeight - 150) / 43 : 20;
      var pageSizes = this.pageSizes.filter(n => nCells >= n).slice(-1);
      if (pageSizes.length > 0) {
        this.recordsPerPage = pageSizes[0];
@@ -566,7 +566,7 @@
            if (!self.isExporting || offset >= self.totalCount) {
              finish();
            } else {
-             window.setTimeout(runExport, 50);
+             setTimeout(runExport, 50);
            }
          })
        }
