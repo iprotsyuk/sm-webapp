@@ -1,3 +1,7 @@
+/dist
+clientConfig.json
+db.sqlite
+
 # Logs
 logs
 *.log
