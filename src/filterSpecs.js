@@ -7,7 +7,7 @@ import SearchBox from './components/SearchBox.vue';
 import * as assert from 'assert';
 import metadataRegistry from './assets/metadataRegistry';
 
-const defaultMetadataType = 'Imaging MS';
+const defaultMetadataType = 'LC-MS';
 assert(defaultMetadataType in metadataRegistry);
 
 // Filled during the initialization of adduct filter below

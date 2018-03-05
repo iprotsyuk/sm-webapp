@@ -26,7 +26,7 @@ export const DEFAULT_FILTER: Dictionary<any> = {
   maldiMatrix: undefined,
   analyzerType: undefined,
   simpleQuery: '',
-  metadataType: 'Imaging MS'
+  metadataType: 'LC-MS'
 };
 
 const FILTER_TO_URL: Dictionary<string> = {
