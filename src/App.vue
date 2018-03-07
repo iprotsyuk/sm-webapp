@@ -94,7 +94,7 @@
    top: 11px;
    right: 11px;
    font-size: 18px;
-   color: rgb(0, 105, 224);
+   color: rgb(34, 139, 34);
    background-color: #f8f8f8;
    border-radius: 5px;
    padding: 5px;

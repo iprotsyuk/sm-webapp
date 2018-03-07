@@ -172,7 +172,7 @@
 <style>
  /* bits and pieces copy-pasted from metasp.eu */
  .b-header {
-   background-color: rgba(0, 105, 224, 0.85);
+   background-color: rgba(34, 139, 34, 0.85);
    position: fixed;
    z-index: 1000;
    top: 0;

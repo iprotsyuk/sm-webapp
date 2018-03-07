@@ -49,7 +49,7 @@
  .tf-outer {
    display: inline-block;
    text-align: center;
-   border: 2px solid rgb(38, 127, 228);
+   border: 2px solid rgb(34, 139, 34);
    padding: 0 5px 0 0;
    margin: 0 5px 7px;
    border-radius: 5px;
@@ -58,7 +58,7 @@
  .tf-name {
    display: inline-block;
    padding: 7px 5px;
-   background-color: rgb(38, 127, 228);
+   background-color: rgb(34, 139, 34);
    color: #fff;
  }
 

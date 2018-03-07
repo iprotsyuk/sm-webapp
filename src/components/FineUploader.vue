@@ -224,7 +224,7 @@
 
  /* override some defaults */
  .metasp-button {
-   background-color: #0069e0 !important;
+   background-color: rgb(34, 139, 34) !important;
    padding: 7px 20px !important;
    width: 150px !important;
    font-size: 16px !important;

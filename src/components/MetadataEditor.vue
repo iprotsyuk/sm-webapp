@@ -104,8 +104,6 @@
                       </el-input>
 
                       <el-input-number v-if="field.type == 'number'"
-                                      :min="field.minimum"
-                                      :max="field.maximum"
                                       class="fw-num"
                                       v-model="value[sectionName][propName][fieldName]"
                                       :placeholder="field.default">
