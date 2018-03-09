@@ -29,10 +29,6 @@
       </div>
 
       <p>
-        You can also take a look at <a href="https://www.slideshare.net/Metaspace2020/metaspace-training-2017">slides from the last training course</a> on METASPACE engine (OurCon '16).
-      </p>
-
-      <p>
         If you have any ideas on how to improve the website, please send them to
         <a href="mailto:contact@metaspace2020.eu">our e-mail address</a>.
       </p>
